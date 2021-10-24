@@ -39,7 +39,7 @@ module.exports = {
         return usuario
             .findAll({
                 where: {
-                    username: req.body.username,
+                    mail: req.body.mail,
                     password: req.body.password
                 }
             })

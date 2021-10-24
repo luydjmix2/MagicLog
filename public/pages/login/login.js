@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("#formLogin").submit(function(eventBtFmRegis) {
         eventBtFmRegis.preventDefault();
-        console.log('bt');
+        // console.log('bt');
         login();
 
     });
@@ -13,13 +13,15 @@ $(document).ready(function() {
 function login() {
     var email = $('input[type="email"]').val();
     var password = $('input[type="password"]').val();
-    console.log(email + password);
+    // console.log(email + password);
 
     $.ajax({
             // En data puedes utilizar un objeto JSON, un array o un query string
             data: JSON.stringify({
+                "username": "",
                 "mail": email,
                 "password": password,
+                "status": ""
             }),
             contentType: "application/json; charset=utf-8",
             //Cambiar a type: POST si necesario
@@ -32,6 +34,15 @@ function login() {
         .done(function(data, textStatus, jqXHR) {
             if (console && console.log) {
                 // console.log("La solicitud se ha completado correctamente.");
+                // console.log(data);
+                data.forEach(element => {
+                    console.log(element.id + ": ");
+                    if (element.id) {
+                        $.cookie('userId', element.id, { expires: 0.1, path: '/' });
+                    }
+
+                });
+
                 window.location = '/inicio';
             }
         })

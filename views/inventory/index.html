@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/librari/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/dashboard/magiclog.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/inicio">
+                <img class="mb-4" src="/imgs/logoMagic-log.PNG" alt="" width="100%">
+                <!-- <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div> -->
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/inicio">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Servicios
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/inicio">
+                    <i class="fas fa-file-invoice icon-size-3"></i>
+                    <span>Cotizaciones</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/inicio">
+                    <i class="fas fa-file-invoice-dollar icon-size-3"></i>
+                    <span>Ordenes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/inventario">
+                    <i class="fas fa-boxes icon-size-3"></i>
+                    <span>Inventario</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 my-4">
+                        <h1 class="h3 mb-0 text-gray-800">Inventario</h1>
+                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                    </div>
+                    <!-- section create product -->
+                    <section>
+                        <div class="card shadow mb-4">
+                            <div class="mx-3 my-3">
+                                <button class="btn btn-success btn-icon-split" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Crear producto</span>
+                                </button>
+                                <!-- <a href="#" class="btn btn-success btn-icon-split" data-bs-toggle="modal"
+                                    data-bs-target="#addInventory">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Crear producto</span>
+                                </a> -->
+                            </div>
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">lista de productos</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table table-bordered dataTable" id="dataTable"
+                                                    width="100%" cellspacing="0" role="grid"
+                                                    aria-describedby="dataTable_info" style="width: 100%;">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting sorting_asc" tabindex="0"
+                                                                aria-controls="dataTable" rowspan="1" colspan="1"
+                                                                aria-sort="ascending"
+                                                                aria-label="Name: activate to sort column descending"
+                                                                style="width: 20px;">Id</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Position: activate to sort column ascending"
+                                                                style="width: 50px;">SKU</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Office: activate to sort column ascending"
+                                                                style="width: 200px;">Nombre</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Age: activate to sort column ascending"
+                                                                style="width: 54px;">Cantidad</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Start date: activate to sort column ascending"
+                                                                style="width: 120px;">Precio</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- <tfoot>
+                                                        <tr>
+                                                            <th rowspan="1" colspan="1">Name</th>
+                                                            <th rowspan="1" colspan="1">Position</th>
+                                                            <th rowspan="1" colspan="1">Office</th>
+                                                            <th rowspan="1" colspan="1">Age</th>
+                                                            <th rowspan="1" colspan="1">Start date</th>
+                                                            <th rowspan="1" colspan="1">Salary</th>
+                                                        </tr>
+                                                    </tfoot> -->
+                                                    <tbody id="listItem">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col-sm-12 col-md-5">
+                                                <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7">
+                                                <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                        <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
+                                                        <li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+
+    <!-- Modal crear producto-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear producto</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formInventory" action="" method="post">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-floating my-3">
+                                    <input type="text" class="form-control" id="floatingSKU" placeholder="SKU"
+                                        value="arr1l">
+                                    <label for="floatingSKU">SKU</label>
+                                    <div class="alert alert-danger visually-hidden validSKU my-2" role="alert">
+                                        The value in input email not is one email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating my-3">
+                                    <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre"
+                                        value="arroz 1 libra">
+                                    <label for="floatingNombre">Nombre</label>
+                                    <div class="alert alert-danger visually-hidden validNombre my-2" role="alert">
+                                        The value in input email not is one email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating my-3">
+                                    <input type="number" class="form-control" id="floatingCantidad"
+                                        placeholder="Cantidad" value="12">
+                                    <label for="floatingCantidad">Cantidad</label>
+                                    <div class="alert alert-danger visually-hidden validCantidad my-2" role="alert">
+                                        The value in input email not is one email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating my-3">
+                                    <input type="text" class="form-control" id="floatingPrecio" placeholder="Precio"
+                                        value="123456">
+                                    <label for="floatingPrecio">Precio</label>
+                                    <div class="alert alert-danger visually-hidden validPrecio my-2" role="alert">
+                                        The value in input email not is one email.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Crear</button>
+                    </form>
+                    <br>
+                    <button class="btn btn-danger me-2 my-3" type="button" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/librari/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/librari/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/librari/datatables.net/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="pages/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="js/magiclog.js"></script>
+    <script src="pages/datatable/datatable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+        integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="pages/inventory/inventory.js"></script>
+
+</body>
+
+</html>

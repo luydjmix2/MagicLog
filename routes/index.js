@@ -3,6 +3,7 @@ const usuarioController = require('../controllers/usuario');
 const loginController = require("../controllers/loginController");
 const registerController = require("../controllers/registerController");
 const homeController = require("../controllers/homeController");
+const inventoryController = require("../controllers/inventoryController");
 
 module.exports = (app) => {
 
@@ -17,6 +18,7 @@ module.exports = (app) => {
     app.get('/', loginController.index);
     app.get('/registro', registerController.index);
     app.get('/inicio', homeController.index);
+    app.get('/inventario', inventoryController.index);
 
 
     app.get('/api', (req, res) => res.status(200).send({
@@ -27,6 +29,8 @@ module.exports = (app) => {
     app.get('/api/usuario/list', usuarioController.list);
     app.get('/api/usuario/find/username/:username', usuarioController.find);
 
+    app.post('/api/inventario/create', inventoryController.create);
+    app.get('/api/inventario/list', inventoryController.list);
 
     // app.use("/public", express.static(__dirname + '/../public'));
     // app.use('/src/*', (req, res) => res.sendFile(path.join(__dirname, '/../src/')));
