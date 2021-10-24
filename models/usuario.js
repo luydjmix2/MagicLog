@@ -14,10 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     usuario.init({
-        username: {
-            allowNull: true,
-            type: DataTypes.STRING
-        },
         mail: {
             allowNull: false,
             type: DataTypes.STRING,
@@ -38,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         status: {
-            allowNull: true,
             defaultValue: 1,
             type: DataTypes.CHAR
         }

@@ -12,7 +12,8 @@ module.exports = {
                 password: req.body.password,
                 status: req.body.status
             })
-            .then(function(usuario) {
+            .then(function (usuario) {
+                req.session.destroy();
                 session = req.session;
                 session.loggedin = true;
                 // req.session.username = username;
@@ -29,7 +30,7 @@ module.exports = {
         return usuario
             .findAll({
                 where: {
-                    username: req.params.username
+                    mail: req.params.mail
                 }
             })
             .then(usuario => res.status(200).send(usuario))
@@ -40,13 +41,14 @@ module.exports = {
             .findAll({
                 where: {
                     mail: req.body.mail,
-                    password: req.body.password
+                    password: req.body.password,
+                    status: "1"
                 }
             })
-            .then(function(usuario) {
+            .then(function (usuario) {
                 session = req.session;
                 session.loggedin = true;
-                res.status(200).send(usuario);
+                res.status(200).json(req.body.mail);
             })
             .catch(error => res.status(400).send(error))
     },

@@ -16,6 +16,7 @@ module.exports = {
     },
     create(req, res) {
         // res.send('welcome, ' + req.body.username);
+        // session.user
         return inventario
             .create({
                 usurioid: req.body.usurioid,
