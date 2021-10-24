@@ -14,11 +14,13 @@ module.exports = {
       },
       nombre: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       sku: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       cantidad: {
         allowNull: false,

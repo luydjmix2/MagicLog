@@ -121,3 +121,4 @@ function disableAler(alertIdenti, message) {
         $(alertIdenti).html(message);
     }
 }
+

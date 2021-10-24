@@ -20,11 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     nombre: {
       allowNull: true,
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: 'compositeIndex'
     },
     sku: {
       allowNull: true,
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: 'compositeIndex'
     },
     cantidad: {
       allowNull: true,
