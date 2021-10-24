@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // alert("hola");
-    $("#floatingPasswordConf").on('keyup', function() {
+    $("#floatingPasswordConf").on('keyup', function () {
         var parenPass = $('#floatingPassword').val();
         var cildPass = $(this).val();
         // console.log('cambio' + parenPass + cildPass);
@@ -16,13 +16,13 @@ $(document).ready(function() {
         ativeAlert(parenPass != cildPass, '.validPass', 'Not Is icual your password.');
     });
 
-    $("#floatingInputEmail").on('keyup', function() {
+    $("#floatingInputEmail").on('keyup', function () {
         var email = $(this).val();
         console.log('mail');
         ativeAlert(!validateEmail(email), '.validEmail', 'The value in input email not is one email.');
     });
 
-    $("#formRegister").submit(function(eventBtFmRegis) {
+    $("#formRegister").submit(function (eventBtFmRegis) {
         // var data = $(this).serialize();
         eventBtFmRegis.preventDefault();
 
@@ -58,35 +58,35 @@ function create() {
     // console.log(email + password);
 
     $.ajax({
-            // En data puedes utilizar un objeto JSON, un array o un query string
-            data: JSON.stringify({
-                "username": "",
-                "mail": email,
-                "password": password,
-                "status": "1"
-            }),
-            contentType: "application/json; charset=utf-8",
-            //Cambiar a type: POST si necesario
-            type: "POST",
-            // Formato de datos que se espera en la respuesta
-            dataType: "json",
-            // URL a la que se enviará la solicitud Ajax
-            url: "http://localhost:8080/api/usuario/create",
-        })
-        .done(function(data, textStatus, jqXHR) {
+        // En data puedes utilizar un objeto JSON, un array o un query string
+        data: JSON.stringify({
+            "username": "",
+            "mail": email,
+            "password": password,
+            "status": "1"
+        }),
+        contentType: "application/json; charset=utf-8",
+        //Cambiar a type: POST si necesario
+        type: "POST",
+        // Formato de datos que se espera en la respuesta
+        dataType: "json",
+        // URL a la que se enviará la solicitud Ajax
+        url: "http://localhost:8080/api/usuario/create",
+    })
+        .done(function (data, textStatus, jqXHR) {
             if (console && console.log) {
                 // console.log("La solicitud se ha completado correctamente.");
                 window.location = '/inicio';
             }
         })
-        .fail(function(jqXHR, textStatus, errorThrown) {
+        .fail(function (jqXHR, textStatus, errorThrown) {
             if (console && console.log) {
                 // console.log("La solicitud a fallado: " + textStatus);
                 // console.log("error:" + errorThrown);
                 // console.log("respuesta:" + JSON.stringify(jqXHR));
 
                 // console.log(jqXHR.responseText);
-                JSON.parse(jqXHR.responseText, function(k, v) {
+                JSON.parse(jqXHR.responseText, function (k, v) {
                     // console.log(k + ":" + v);
                     if (k == "validatorKey" && v == "not_unique") {
                         enableAler(".validEmail", 'your email already exists.');
